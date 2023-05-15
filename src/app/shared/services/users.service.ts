@@ -8,15 +8,18 @@ export class UsersService {
   userArray:Array<Iusers>=[
     {
       username:'jhon',
-      id:1
+      id:1,
+      userRole:"Admin"
     },
     {
       username:'may',
-      id:2
+      id:2,
+      userRole:"Admin"
     },
     {
       username:'july',
-      id:3
+      id:3,
+      userRole:"User"
     }
   ]
   constructor() { }
@@ -26,5 +29,12 @@ export class UsersService {
 
   getUser(Id:number){
     return this.userArray.find(user=>user.id===Id)
+  }
+  updateUser(userObj:Iusers){
+    this.userArray.forEach(user=>{
+      if(userObj.id===user.id){
+        user.username=userObj.username
+      }
+    })
   }
 }

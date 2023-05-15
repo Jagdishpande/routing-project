@@ -10,6 +10,11 @@ import { NavbarComponent } from './shared/component/navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UserComponent } from './shared/component/users/user/user.component';
 import { PageNotFoundComponent } from './shared/component/page-not-found/page-not-found.component';
+import { EditProductComponent } from './shared/component/products/edit-product/edit-product.component';
+import { EdituserComponent } from './shared/component/users/edituser/edituser.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { NavbarClickDirective } from './shared/directive/navbar-click.directive';
 
 
 
@@ -22,11 +27,16 @@ import { PageNotFoundComponent } from './shared/component/page-not-found/page-no
     ProductsComponent,
     NavbarComponent,
     UserComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EditProductComponent,
+    EdituserComponent,
+    NavbarClickDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,24 @@
+<!-- <p>edit-product works! {{prodObj|json}}</p> -->
+
+<div class="productform">
+    <div class="form-group">
+        <label for="pname">Product Name</label>
+        <input type="text" [disabled]="!canEditProd"
+         #pname [value]="prodObj.pname" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="pstatus">Product Status</label>
+    <select name="" #pstatus id="pstatus" [disabled]="!canEditProd" class="form-control" [value]="prodObj.pstatus">
+    <option value="In-Progress">In-Progress</option>
+    <option value="Dispatched">Dispatched</option>
+    <option value="Delivered">Delivered</option>
+    </select>    
+    </div>
+
+    <div class="text-right">
+        <button class="btn btn-primary" (click)="updateProd(pname,pstatus)">
+            Update Product
+        </button>
+    </div>
+</div>

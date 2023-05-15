@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Iproduct } from 'src/app/shared/model/products';
 import { ProductsService } from 'src/app/shared/services/products.service';
 
@@ -12,7 +12,8 @@ export class ProductComponent implements OnInit {
 
   constructor(
     private _route : ActivatedRoute,
-    private _productService:ProductsService
+    private _productService:ProductsService,
+    private _router : Router,
     ) { }
   prodId!:number;
   prodObj!:Iproduct;
@@ -24,4 +25,9 @@ export class ProductComponent implements OnInit {
       })
   }
 
+  goToEditProduct(){
+    this._router.navigate(['/products',this.prodId,'edit'],
+      {queryParamsHandling : "preserve"}
+    )
+  }
 }
