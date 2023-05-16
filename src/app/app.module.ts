@@ -15,6 +15,7 @@ import { EdituserComponent } from './shared/component/users/edituser/edituser.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { NavbarClickDirective } from './shared/directive/navbar-click.directive';
+import { LoginComponent } from './shared/component/login/login.component';
 
 
 
@@ -30,7 +31,8 @@ import { NavbarClickDirective } from './shared/directive/navbar-click.directive'
     PageNotFoundComponent,
     EditProductComponent,
     EdituserComponent,
-    NavbarClickDirective
+    NavbarClickDirective,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

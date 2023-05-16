@@ -8,25 +8,31 @@ import { ProductComponent } from "./shared/component/products/product/product.co
 import { PageNotFoundComponent } from "./shared/component/page-not-found/page-not-found.component";
 import { EditProductComponent } from "./shared/component/products/edit-product/edit-product.component";
 import { EdituserComponent } from "./shared/component/users/edituser/edituser.component";
+import { AuthGaurd } from "./shared/services/auth.gaurd";
+import { LoginComponent } from "./shared/component/login/login.component";
 
 const route :Routes=[
   
     //  {path : 'home', component : DashboardComponent},
-    {path : '', component : DashboardComponent},
-     {path : 'users', component : UsersComponent,
-    
-        // children:[
-        //     {path :':userId', component : UserComponent},
-        //     {path :'userId/edit',component :EdituserComponent}
-        // ]
+    {path : '', component : LoginComponent},
+    {path : 'home', component : DashboardComponent},
+
+    {path : 'users', component : UsersComponent,
+     canActivate :[AuthGaurd] ,  
+
+        children:[
+            {path :':userId', component : UserComponent},
+            {path :'userId/edit',component :EdituserComponent}
+        ]
     },
 
 
-     {path : 'users/:userId', component : UserComponent},
-     {path:'users/:userId/edit', component :EdituserComponent},
+    //  {path : 'users/:userId', component : UserComponent},
+    //  {path:'users/:userId/edit', component :EdituserComponent},
 
     {path :'products', component : ProductsComponent,
-        children : [
+     canActivateChild :[AuthGaurd] ,  
+    children : [
             {path :':prodId', component : ProductComponent },
             {path : ':prodId/edit', component :EditProductComponent}
         ]

@@ -1,0 +1,76 @@
+<div class="main">
+    <div class="card forms">
+        <div class="card-body">
+            <div class="loginForm" *ngIf="alreadyHaveAccount">
+                <h3>Sign In</h3>
+                <div class="input-group mb-3">
+
+                    <input type="email" class="form-control" placeholder="Email" aria-label="Email"
+                        aria-describedby="basic-addon1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="Password" aria-label="Password"
+                        aria-describedby="basic-addon1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2">@</span>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="Confirm Password" aria-label="Password"
+                        aria-describedby="basic-addon1">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">@</span>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-primary" (click)="onLogin()">
+                        Log In
+                    </button>
+                </div>
+            </div>
+            <div class="signUpForm" *ngIf="!alreadyHaveAccount">
+              <h3>  Create Account </h3>
+              <div class="input-group mb-3">
+
+                <input type="email" class="form-control" placeholder="Email" aria-label="Email"
+                    aria-describedby="basic-addon1">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="password" class="form-control" placeholder="Password" aria-label="Password"
+                    aria-describedby="basic-addon1">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon2">@</span>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="password" class="form-control" placeholder="Confirm Password" aria-label="Password"
+                    aria-describedby="basic-addon1">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">@</span>
+                </div>
+            </div>
+            <div class="text-right">
+                <button class="btn btn-primary" (click)="onLogin()">
+                    Sign Up
+                </button>
+            </div>
+            </div>
+            <p *ngIf="alreadyHaveAccount">
+                <a href="javascript:;" class="btn btn-link"  (click)="alreadyHaveAccount = !alreadyHaveAccount">
+                    Don't have Account
+                </a>
+            </p>
+            <p *ngIf="!alreadyHaveAccount" >
+                <a href="javascript:;" class="btn btn-link"  (click)="alreadyHaveAccount = !alreadyHaveAccount">
+                  Already have Account
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
